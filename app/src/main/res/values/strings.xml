@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="loading">Loading ...</string>
+    <string name="try_later">Please try again later</string>
+    <string name="title_activity_movie_details">MovieDetailsActivity</string>
+    <string name="top">Sort by Rating</string>
+    <string name="pop">Sort by Popularity</string>
+    <string name="fav">My Favourite</string>
+
+</resources>

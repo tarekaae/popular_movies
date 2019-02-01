@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tarek.nanodegree.popularmovies.view.MovieDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/nameBG"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#009788">
+
+        <TextView
+            android:id="@+id/movie_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="Movie Name"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/nameBG">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/moviePosterLayout"
+                    android:layout_width="180dp"
+                    android:layout_height="230dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/moviePoster"
+                        android:layout_width="180dp"
+                        android:layout_height="230dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/ic_local_movies_black_192dp"
+                        android:padding="10dp"
+                        android:visibility="invisible" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/movieYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/moviePosterLayout"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/moviePosterLayout"
+                    android:text="2015"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/movieDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/movieYear"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/moviePosterLayout"
+                    android:text="120 min"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/movieRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/movieDuration"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/moviePosterLayout"
+                    android:text="8/10"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_fav"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/movieRating"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/moviePosterLayout"
+                    android:onClick="favourite"
+                    android:background="#e6e6e6"
+                    android:text="Mark As Favourite" />
+
+                <TextView
+                    android:id="@+id/movieDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/moviePosterLayout"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="this is just dummy discription this is just dummy discription this is just dummy discription this is just dummy discription this is just dummy discription this is just dummy discription"
+                    android:textSize="15sp" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/movieDesc"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000" />
+
+                <RelativeLayout
+                    android:id="@+id/trailersLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line">
+
+                    <ProgressBar
+                        android:id="@+id/progressBarTrailers"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/trailers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Trailers :"
+                        android:textSize="30sp"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewTrailers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/trailers"
+                        android:padding="20dp"
+                        android:visibility="gone">
+
+                    </android.support.v7.widget.RecyclerView>
+
+
+                </RelativeLayout>
+
+                <!-- reviews -->
+
+                <RelativeLayout
+                    android:id="@+id/reviewsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/trailersLayout">
+
+                    <ProgressBar
+                        android:id="@+id/progressBarReviews"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/reviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Reviews :"
+                        android:textSize="30sp"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_marginTop="25dp"
+                        android:id="@+id/recyclerViewReveies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:visibility="gone">
+
+                    </android.support.v7.widget.RecyclerView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

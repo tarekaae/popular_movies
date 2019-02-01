@@ -1,0 +1,11 @@
+1- define a call to "movie/top_rated" API  in "MovieAPI" interface
+2- define a call to "movie/popular" API  in "MovieAPI" interface
+3- call the new APIs
+4- remove the local sort methods
+5- adding the property ( android:configChanges="orientation|screenSize" ) to the activities to lock reloading the app state ( just for project 1) / I handled the dialog too
+6- tweak the layout to handle no image case , i put it inside layout and used View.invisible instead of gone
+7- tried to store the api key in an env var and get it from gradle but couldn't , I will postpone it after gradle course
+
+
+
+
